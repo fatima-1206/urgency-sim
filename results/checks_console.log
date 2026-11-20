@@ -1,0 +1,233 @@
+
+======================================================================================
+CHECK 1 - RUNTIME
+======================================================================================
+  proposed       1.14 s/run   1.89 ms/step  GP 0.24 s (21.4%)
+  fixed_dl       1.39 s/run   2.32 ms/step  GP 0.25 s (18.2%)
+  threshold      1.46 s/run   2.44 ms/step  GP 0.28 s (19.2%)
+  time_urg       1.77 s/run   2.95 ms/step  GP 0.35 s (20.0%)
+  always_tx      1.49 s/run   2.48 ms/step  GP 0.25 s (16.6%)
+  surprise_abl   1.42 s/run   2.37 ms/step  GP 0.31 s (22.1%)
+  raw_abl        1.38 s/run   2.30 ms/step  GP 0.26 s (18.8%)
+  200 seeds x 2 field x 7 methods = 2800 runs:   67.0 min serial,   6.7 min on 10 workers
+  200 seeds x 2 field x 2 conn x 7 methods = 5600 runs:  134.0 min serial,  13.4 min on 10 workers
+
+======================================================================================
+CHECK 2 - FIELD SANITY AND PATH COVERAGE
+======================================================================================
+  grid 30x30, mission 600 ticks
+  worst combined CFL limit over 50 seeds: 0.7849; dt=0.5 -> ratio 0.64 (need < 0.8)
+  predictable    finite=True frac>hazard=0.0832  com=[(0, 11.01, 11.56), (150, 16.07, 14.44), (300, 19.58, 16.9), (450, 15.8, 14.29), (600, 19.88, 17.04)]
+  unpredictable  finite=True frac>hazard=0.1173  com=[(0, 11.01, 11.56), (150, 16.07, 14.44), (300, 11.71, 20.91), (450, 11.58, 16.49), (600, 13.15, 17.39)]
+
+  PATH COVERAGE: mean 37.0% (min 21.0%, max 44.6%) of 900 cells
+    ceiling is 67% (one cell per tick, no revisits); was 12% in the first prototype
+  OBSERVABLE EVENTS: 98.8% of events come within sensor range at some point;
+    42.6% within sensor range near the event time (+/-25 ticks)
+  -> figs/check2_field_sanity.png
+
+======================================================================================
+CHECK C - CONNECTIVITY SCENARIOS: WHAT DOES THE DRAWN RADIUS MEAN?
+======================================================================================
+  quality(d) = peak * exp(-0.5 d^2/(radius/2)^2)
+    at d = radius      -> exp(-2) = 13.5% of peak  (what the circle shows)
+    delivery prob 0.5  -> d ~ 0.57 * radius for a strong region
+  Gilbert-Elliott mean multiplier = 0.768, so effective p = q * 0.768
+
+  conn      geometric>0.5  effective>0.5  inside drawn circle
+  sparse            24.8%          13.1%                63.6%
+  dense             52.7%          31.4%                98.6%
+
+  => the drawn circles overstate real coverage by roughly 3-5x.
+
+======================================================================================
+CHECK 3 & 4 - DETECTION, AND DO THE TWO URGENCY TERMS EARN THEIR PLACE? (50 seeds)
+======================================================================================
+  conn     method         fires   detect   FA rate   delay  detours  falseDet
+  sparse   proposed        16.1   0.178     0.240    11.8     14.4       3.9
+  sparse   surprise_abl    15.0   0.161     0.259    11.7     13.5       4.0
+  sparse   raw_abl         16.7   0.195     0.261    12.7     15.4       4.4
+  sparse   threshold       14.3   0.200     0.214    12.5     13.1       2.7
+
+  dense    proposed        17.8   0.195     0.233    11.8     13.9       3.8
+  dense    surprise_abl    15.4   0.166     0.254    11.7     12.7       3.9
+  dense    raw_abl         17.8   0.214     0.269    12.2     15.0       4.4
+  dense    threshold       15.1   0.219     0.203    12.5     12.6       3.0
+
+  paired tests on false-alarm rate (lower is better):
+    proposed 0.236 vs surprise_abl  0.256  diff=-0.020  p=0.1810  (n=200)
+    proposed 0.236 vs raw_abl       0.265  diff=-0.029  p=0.0542  (n=200)
+    proposed 0.236 vs threshold     0.208  diff=+0.028  p=0.0279  (n=200)
+  paired tests on detection rate (higher is better):
+    proposed 0.187 vs surprise_abl  0.164  diff=+0.023  p=0.0001  (n=200)
+    proposed 0.187 vs raw_abl       0.205  diff=-0.018  p=0.0125  (n=200)
+    proposed 0.187 vs threshold     0.210  diff=-0.023  p=0.0014  (n=200)
+  -> figs/check34_detection.png
+
+======================================================================================
+CHECK 5 - ACTION CHOICE, DEADLINE TIGHTNESS, AND REGION USAGE (40 seeds)
+======================================================================================
+  --- selection rule comparison (how often each action is chosen) ---
+  rule        conn      transmit   launch   region  explore  on-time    cov
+  p_deliver   sparse        5.7%    50.1%    34.6%     9.6%    0.445   0.36
+  p_deliver   dense        13.6%    46.8%    28.3%    11.3%    0.445   0.39
+  exp_time    sparse        5.4%    54.2%    31.1%     9.4%    0.450   0.36
+  exp_time    dense        12.1%    49.2%    26.7%    12.0%    0.441   0.39
+
+  --- sparse connectivity ---
+    decisions while pending: 17.6/run
+    regions: 2.84 discovered at decision time (peak 3.98) vs 2.62 real
+    action chosen:  transmit_now   5.4%   goto_launch  54.2%   goto_region  31.1%   explore   9.4%
+    distance when pending:  launch   7.5 cells,  other regions  15.4 cells
+    estimated p(success):   launch 0.768,       other regions 0.768
+    mean P(deliver) scored per action: transmit_now 0.352  goto_launch 0.889  goto_region 0.698  explore 0.270
+    mean E[time to upload]:  transmit_now 3114114.4  goto_launch    6.5  goto_region   13.8  explore   26.9
+    deadline horizon 18.2 ticks; tightness (horizon/travel): launch 3.8, region 2.8
+    fraction where the deadline expires before the agent could arrive: launch 10%, region 16%
+
+  --- dense connectivity ---
+    decisions while pending: 19.7/run
+    regions: 2.36 discovered at decision time (peak 4.47) vs 4.00 real
+    action chosen:  transmit_now  12.1%   goto_launch  49.2%   goto_region  26.7%   explore  12.0%
+    distance when pending:  launch   7.8 cells,  other regions  14.9 cells
+    estimated p(success):   launch 0.744,       other regions 0.780
+    mean P(deliver) scored per action: transmit_now 0.544  goto_launch 0.851  goto_region 0.741  explore 0.312
+    mean E[time to upload]:  transmit_now 5262641.1  goto_launch    6.6  goto_region   12.1  explore   24.3
+    deadline horizon 17.7 ticks; tightness (horizon/travel): launch 3.8, region 2.4
+    fraction where the deadline expires before the agent could arrive: launch 15%, region 22%
+
+
+======================================================================================
+CHECK 6 - DO METHODS ACTUALLY DIFFER? (200 seeds x 2 field x 2 conn)
+======================================================================================
+  5600 runs on 10 workers ...
+  done in 48.6 min
+
+  scen   conn    method          on-time(obs)    near  latency   mapRMSE  falseDet  energy
+  predi  sparse  proposed       0.475+-0.025   0.570     57.7    0.2745       3.4     851
+  predi  sparse  fixed_dl       0.453+-0.024   0.546     61.6    0.2941       3.4     850
+  predi  sparse  threshold      0.512+-0.027   0.619     55.9    0.3920       2.2     833
+  predi  sparse  time_urg       0.447+-0.019   0.536     62.1    0.2852       9.5     903
+  predi  sparse  always_tx      0.191+-0.021   0.258     87.6    0.2531       0.0     720
+  predi  sparse  surprise_abl   0.434+-0.028   0.512     55.5    0.2869       2.9     838
+  predi  sparse  raw_abl        0.486+-0.027   0.572     59.7    0.3220       4.2     864
+
+  predi  dense   proposed       0.443+-0.026   0.538     65.0    0.2794       2.7     831
+  predi  dense   fixed_dl       0.467+-0.027   0.551     54.9    0.2709       2.7     830
+  predi  dense   threshold      0.547+-0.027   0.646     48.5    0.3792       2.1     821
+  predi  dense   time_urg       0.405+-0.020   0.495     70.3    0.2847       9.2     884
+  predi  dense   always_tx      0.303+-0.025   0.380     76.6    0.2741       0.0     730
+  predi  dense   surprise_abl   0.438+-0.026   0.520     53.6    0.2763       2.6     826
+  predi  dense   raw_abl        0.489+-0.025   0.579     53.4    0.3129       3.8     852
+
+  unpre  sparse  proposed       0.453+-0.022   0.533     69.2    0.3268       5.5     876
+  unpre  sparse  fixed_dl       0.452+-0.020   0.529     67.7    0.3578       5.5     875
+  unpre  sparse  threshold      0.524+-0.023   0.595     62.5    0.4128       4.1     848
+  unpre  sparse  time_urg       0.444+-0.019   0.527     68.4    0.3128      10.0     903
+  unpre  sparse  always_tx      0.160+-0.019   0.218     75.6    0.2941       0.0     717
+  unpre  sparse  surprise_abl   0.415+-0.024   0.487     68.4    0.3239       4.7     858
+  unpre  sparse  raw_abl        0.484+-0.024   0.555     65.3    0.3603       5.7     882
+
+  unpre  dense   proposed       0.434+-0.022   0.517     73.5    0.3326       4.8     855
+  unpre  dense   fixed_dl       0.452+-0.022   0.528     66.4    0.3369       4.8     861
+  unpre  dense   threshold      0.546+-0.023   0.630     56.2    0.4223       3.8     839
+  unpre  dense   time_urg       0.424+-0.018   0.503     72.7    0.3178       9.0     884
+  unpre  dense   always_tx      0.274+-0.023   0.346     76.5    0.3341       0.0     727
+  unpre  dense   surprise_abl   0.416+-0.023   0.491     63.7    0.3263       3.9     844
+  unpre  dense   raw_abl        0.491+-0.022   0.560     62.1    0.3779       5.3     874
+
+  === paired Wilcoxon, proposed vs each method, pooled over all cells ===
+  -- on_time_ratio --
+    proposed   0.4513 vs fixed_dl        0.4563  diff= -0.0050  p=6.00e-01   (n=800)
+    proposed   0.4513 vs threshold       0.5323  diff= -0.0810  p=9.14e-18 ***  (n=800)
+    proposed   0.4513 vs time_urg        0.4300  diff= +0.0213  p=1.19e-02 *  (n=800)
+    proposed   0.4513 vs always_tx       0.2319  diff= +0.2194  p=2.10e-83 ***  (n=800)
+    proposed   0.4513 vs surprise_abl    0.4255  diff= +0.0258  p=6.05e-04 ***  (n=800)
+    proposed   0.4513 vs raw_abl         0.4876  diff= -0.0363  p=1.45e-05 ***  (n=800)
+  -- map_rmse --
+    proposed   0.3033 vs fixed_dl        0.3149  diff= -0.0116  p=5.88e-02   (n=800)
+    proposed   0.3033 vs threshold       0.4016  diff= -0.0982  p=9.08e-25 ***  (n=800)
+    proposed   0.3033 vs time_urg        0.3001  diff= +0.0032  p=4.53e-01   (n=800)
+    proposed   0.3033 vs always_tx       0.2888  diff= +0.0145  p=1.70e-02 *  (n=800)
+    proposed   0.3033 vs surprise_abl    0.3033  diff= +0.0000  p=9.55e-01   (n=800)
+    proposed   0.3033 vs raw_abl         0.3433  diff= -0.0400  p=1.25e-08 ***  (n=800)
+  -- mean_latency --
+    proposed  66.3496 vs fixed_dl       62.6622  diff= +3.6874  p=1.95e-02 *  (n=800)
+    proposed  66.3496 vs threshold      55.7610  diff=+10.5886  p=7.91e-09 ***  (n=800)
+    proposed  66.3496 vs time_urg       68.3783  diff= -2.0287  p=8.52e-03 **  (n=800)
+    proposed  66.2241 vs always_tx      79.0348  diff=-12.8107  p=1.86e-06 ***  (n=790)
+    proposed  66.3496 vs surprise_abl   60.2646  diff= +6.0850  p=2.65e-03 **  (n=800)
+    proposed  66.3496 vs raw_abl        60.1514  diff= +6.1982  p=4.35e-04 ***  (n=800)
+
+  === map RMSE: GP-trigger methods vs non-GP-trigger methods ===
+  (every method builds a cloud GP map; only the TRIGGER differs)
+    proposed      0.3033   [GP trigger]
+    fixed_dl      0.3149   [GP trigger]
+    threshold     0.4016   [no GP trigger]
+    time_urg      0.3001   [no GP trigger]
+    always_tx     0.2888   [GP trigger]
+    surprise_abl  0.3033   [GP trigger]
+    raw_abl       0.3433   [GP trigger]
+  -> figs/check6_methods.png  results/check6_runs.csv
+
+======================================================================================
+CHECK 7 - REGION DISCOVERY (40 seeds)
+======================================================================================
+  sparse  : discovered 2.61 of 2.62 real extra regions (100%), median discovery tick 108 of 600
+  dense   : discovered 0.96 of 4.00 real extra regions (24%), median discovery tick 106 of 600
+
+======================================================================================
+CHECK 8 - SENSITIVITY (16 seeds)
+======================================================================================
+  variant                method            on-time  falseDet   mapRMSE   fires   verdict
+  urgency[1.3,8.3]       proposed     0.464+-0.047       4.6    0.3088    17.0   THRESHOLD
+  urgency[1.3,8.3]       threshold    0.555+-0.041       3.2    0.4124    16.3
+
+  urgency[1.0,4.0]       proposed     0.457+-0.042       3.2    0.2789    16.9   THRESHOLD
+  urgency[1.0,4.0]       threshold    0.555+-0.041       3.2    0.4124    16.3
+
+  urgency[2.0,15.0]      proposed     0.478+-0.041       4.0    0.2781    15.4   THRESHOLD
+  urgency[2.0,15.0]      threshold    0.555+-0.041       3.2    0.4124    16.3
+
+  k_consistent=1         proposed     0.551+-0.039      14.0    0.3270    60.9   THRESHOLD
+  k_consistent=1         threshold    0.566+-0.042      13.5    0.3103    62.4
+
+  k_consistent=2         proposed     0.512+-0.044       8.2    0.3392    30.3   THRESHOLD
+  k_consistent=2         threshold    0.537+-0.039       5.5    0.3762    28.9
+
+  k_consistent=3         proposed     0.475+-0.039       3.8    0.2890    17.6   THRESHOLD
+  k_consistent=3         threshold    0.555+-0.041       3.2    0.4124    16.3
+
+  k_consistent=5         proposed     0.330+-0.039       1.8    0.3154     8.1   THRESHOLD
+  k_consistent=5         threshold    0.428+-0.053       1.1    0.4000     7.9
+
+  hazard=0.25            proposed     0.510+-0.049       4.9    0.3108    21.1   THRESHOLD
+  hazard=0.25            threshold    0.601+-0.029       7.8    0.3566    31.0
+
+  hazard=0.35            proposed     0.475+-0.039       3.8    0.2890    17.6   THRESHOLD
+  hazard=0.35            threshold    0.555+-0.041       3.2    0.4124    16.3
+
+  hazard=0.5             proposed     0.394+-0.043       4.1    0.3028    15.0   proposed
+  hazard=0.5             threshold    0.371+-0.046       0.7    0.3163     6.8
+
+  w_consequence=0.0      proposed     0.423+-0.049       3.1    0.2927    13.5   THRESHOLD
+  w_consequence=0.0      threshold    0.555+-0.041       3.2    0.4124    16.3
+
+  w_consequence=1.0      proposed     0.475+-0.039       3.8    0.2890    17.6   THRESHOLD
+  w_consequence=1.0      threshold    0.555+-0.041       3.2    0.4124    16.3
+
+  w_consequence=3.0      proposed     0.427+-0.046       4.1    0.2613    18.9   THRESHOLD
+  w_consequence=3.0      threshold    0.555+-0.041       3.2    0.4124    16.3
+
+
+======================================================================================
+CHECK 9 - URGENCY -> DEADLINE DISTRIBUTION (40 seeds)
+======================================================================================
+  urgency at fire:  p10=1.96  p25=2.25  p50=2.88  p75=4.06  p90=6.48
+  assigned deadline (allowed 4..24 ticks):
+    p5=4  p10=7  p25=16  p50=21  p75=23  p90=24  p95=24
+    mean 18.5  std 6.0  at floor 12%  at ceiling 62%
+  -> figs/check9_deadlines.png
+
+total 83.5 min
+wrote results/report.json (10 checks: check1, check2, check3_4, check5, check5_rules, check6, check7, check8, check9, check_conn)

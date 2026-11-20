@@ -1,0 +1,78 @@
+
+======================================================================================
+CHECK 1 - RUNTIME
+======================================================================================
+  proposed       0.35 s/run   0.59 ms/step  GP 0.07 s (21.2%)
+  fixed_dl       0.40 s/run   0.66 ms/step  GP 0.08 s (20.0%)
+  threshold      0.35 s/run   0.59 ms/step  GP 0.08 s (22.3%)
+  time_urg       0.38 s/run   0.64 ms/step  GP 0.08 s (20.6%)
+  always_tx      0.29 s/run   0.49 ms/step  GP 0.08 s (25.7%)
+  surprise_abl   0.42 s/run   0.71 ms/step  GP 0.13 s (31.2%)
+  raw_abl        0.42 s/run   0.69 ms/step  GP 0.10 s (22.9%)
+  200 seeds x 2 field x 7 methods = 2800 runs:   17.4 min serial,   1.7 min on 10 workers
+  200 seeds x 2 field x 2 conn x 7 methods = 5600 runs:   34.9 min serial,   3.5 min on 10 workers
+
+======================================================================================
+CHECK 2 - FIELD SANITY AND PATH COVERAGE
+======================================================================================
+  grid 30x30, mission 600 ticks
+  worst combined CFL limit over 50 seeds: 0.7849; dt=0.5 -> ratio 0.64 (need < 0.8)
+  predictable    finite=True frac>hazard=0.0832  com=[(0, 11.01, 11.56), (150, 16.07, 14.44), (300, 19.58, 16.9), (450, 15.8, 14.29), (600, 19.88, 17.04)]
+  unpredictable  finite=True frac>hazard=0.1173  com=[(0, 11.01, 11.56), (150, 16.07, 14.44), (300, 11.71, 20.91), (450, 11.58, 16.49), (600, 13.15, 17.39)]
+
+  PATH COVERAGE: mean 37.0% (min 21.0%, max 44.6%) of 900 cells
+    ceiling is 67% (one cell per tick, no revisits); was 12% in the first prototype
+  OBSERVABLE EVENTS: 98.8% of events come within sensor range at some point;
+    42.6% within sensor range near the event time (+/-25 ticks)
+  -> figs/check2_field_sanity.png
+
+======================================================================================
+CHECK 5 - ACTION CHOICE, DEADLINE TIGHTNESS, AND REGION USAGE (8 seeds)
+======================================================================================
+  --- selection rule comparison (how often each action is chosen) ---
+  rule        conn      transmit   launch   region  explore  on-time    cov
+  p_deliver   sparse        7.1%    47.0%    36.5%     9.4%    0.483   0.36
+  p_deliver   dense         7.9%    45.0%    31.5%    15.6%    0.410   0.41
+  exp_time    sparse        6.0%    52.9%    31.3%     9.8%    0.472   0.36
+  exp_time    dense        10.3%    48.1%    30.5%    11.2%    0.434   0.40
+
+  --- sparse connectivity ---
+    decisions while pending: 17.8/run
+    regions: 2.79 discovered at decision time (peak 4.06) vs 2.75 real
+    action chosen:  transmit_now   6.0%   goto_launch  52.9%   goto_region  31.3%   explore   9.8%
+    distance when pending:  launch   6.9 cells,  other regions  15.1 cells
+    estimated p(success):   launch 0.731,       other regions 0.751
+    mean P(deliver) scored per action: transmit_now 0.378  goto_launch 0.887  goto_region 0.724  explore 0.273
+    mean E[time to upload]:  transmit_now   24.1  goto_launch    6.4  goto_region   12.7  explore   26.9
+    deadline horizon 18.7 ticks; tightness (horizon/travel): launch 4.1, region 3.0
+    fraction where the deadline expires before the agent could arrive: launch 8%, region 8%
+
+  --- dense connectivity ---
+    decisions while pending: 17.3/run
+    regions: 2.60 discovered at decision time (peak 5.38) vs 4.00 real
+    action chosen:  transmit_now  10.3%   goto_launch  48.1%   goto_region  30.5%   explore  11.2%
+    distance when pending:  launch   7.1 cells,  other regions  15.3 cells
+    estimated p(success):   launch 0.743,       other regions 0.844
+    mean P(deliver) scored per action: transmit_now 0.575  goto_launch 0.880  goto_region 0.788  explore 0.388
+    mean E[time to upload]:  transmit_now   16.6  goto_launch    6.1  goto_region   10.8  explore   22.5
+    deadline horizon 18.2 ticks; tightness (horizon/travel): launch 3.9, region 2.2
+    fraction where the deadline expires before the agent could arrive: launch 8%, region 21%
+
+
+======================================================================================
+CHECK 7 - REGION DISCOVERY (8 seeds)
+======================================================================================
+  sparse  : discovered 2.75 of 2.75 real extra regions (100%), median discovery tick 111 of 600
+  dense   : discovered 1.06 of 4.00 real extra regions (27%), median discovery tick 91 of 600
+
+======================================================================================
+CHECK 9 - URGENCY -> DEADLINE DISTRIBUTION (8 seeds)
+======================================================================================
+  urgency at fire:  p10=1.99  p25=2.33  p50=2.91  p75=3.81  p90=5.83
+  assigned deadline (allowed 4..24 ticks):
+    p5=4  p10=10  p25=17  p50=21  p75=23  p90=24  p95=24
+    mean 18.7  std 5.6  at floor 10%  at ceiling 62%
+  -> figs/check9_deadlines.png
+
+total 1.3 min
+wrote results/report.json (10 checks: check1, check2, check3_4, check5, check5_rules, check6, check7, check8, check9, check_conn)

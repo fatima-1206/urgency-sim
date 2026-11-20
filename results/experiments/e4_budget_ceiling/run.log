@@ -1,0 +1,20 @@
+=== e4_budget_ceiling: Budget ceiling: where does the proposed method stop improving? ===
+    Phase 3 ended at 90 alarms/run still climbing. Where is the plateau?
+    0 runs already complete
+
+--- level base ---
+  [calib base] proposed      b=  90 -> trig 0.2969 ->   91.8 fires
+  [calib base] proposed      b= 120 -> trig 0.1562 ->  120.9 fires
+  [calib base] proposed      b= 150 -> trig 0.0156 ->  148.8 fires
+  [calib base] proposed      b= 180 -> trig 0.0156 ->  148.8 fires   ** -17% OFF TARGET **
+  [base] 200/1600  1.5 min, 10.6 left
+  [base] 400/1600  3.0 min, 9.0 left
+  [base] 600/1600  4.5 min, 7.4 left
+  [base] 800/1600  5.9 min, 5.9 left
+  [base] 1000/1600  7.4 min, 4.4 left
+  [base] 1200/1600  8.9 min, 3.0 left
+  [base] 1400/1600  10.3 min, 1.5 left
+  [base] 1600/1600  11.8 min, 0.0 left
+  [base] done
+
+e4_budget_ceiling total 19.4 min

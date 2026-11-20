@@ -1,0 +1,62 @@
+=== e8_burstiness: Channel burstiness at constant mean loss ===
+    Does the two-tier upload rule earn its place as bursts lengthen?
+    0 runs already complete
+
+--- level b1 ---
+  [calib b1] proposed      b=  11 -> trig 2.1250 ->   11.1 fires
+  [calib b1] proposed      b=  45 -> trig 0.7812 ->   43.8 fires
+  [calib b1] threshold     b=  11 -> trig 0.0375 ->   10.3 fires
+  [calib b1] threshold     b=  45 -> trig 0.0375 ->   10.3 fires   ** -77% OFF TARGET **
+  [b1] 200/1600  1.1 min, 7.8 left
+  [b1] 400/1600  2.2 min, 6.7 left
+  [b1] 600/1600  3.6 min, 6.0 left
+  [b1] 800/1600  5.0 min, 5.0 left
+  [b1] 1000/1600  6.0 min, 3.6 left
+  [b1] 1200/1600  7.2 min, 2.4 left
+  [b1] 1400/1600  8.2 min, 1.2 left
+  [b1] 1600/1600  9.3 min, 0.0 left
+  [b1] done
+--- level b2.86 ---
+  [calib b2.86] proposed      b=  11 -> trig 1.9688 ->   10.4 fires
+  [calib b2.86] proposed      b=  45 -> trig 0.6250 ->   46.0 fires
+  [calib b2.86] threshold     b=  11 -> trig 0.0375 ->    9.8 fires   ** -11% OFF TARGET **
+  [calib b2.86] threshold     b=  45 -> trig 0.0375 ->    9.8 fires   ** -78% OFF TARGET **
+  [b2.86] 200/1600  1.2 min, 8.2 left
+  [b2.86] 400/1600  2.3 min, 6.9 left
+  [b2.86] 600/1600  3.7 min, 6.2 left
+  [b2.86] 800/1600  5.2 min, 5.2 left
+  [b2.86] 1000/1600  6.3 min, 3.8 left
+  [b2.86] 1200/1600  7.4 min, 2.5 left
+  [b2.86] 1400/1600  8.5 min, 1.2 left
+  [b2.86] 1600/1600  9.6 min, 0.0 left
+  [b2.86] done
+--- level b8 ---
+  [calib b8] proposed      b=  11 -> trig 2.0312 ->   11.1 fires
+  [calib b8] proposed      b=  45 -> trig 0.7188 ->   44.6 fires
+  [calib b8] threshold     b=  11 -> trig 0.0375 ->    9.8 fires   ** -11% OFF TARGET **
+  [calib b8] threshold     b=  45 -> trig 0.0375 ->    9.8 fires   ** -78% OFF TARGET **
+  [b8] 200/1600  1.2 min, 8.3 left
+  [b8] 400/1600  2.4 min, 7.1 left
+  [b8] 600/1600  3.8 min, 6.3 left
+  [b8] 800/1600  5.2 min, 5.2 left
+  [b8] 1000/1600  6.2 min, 3.7 left
+  [b8] 1200/1600  7.4 min, 2.5 left
+  [b8] 1400/1600  8.5 min, 1.2 left
+  [b8] 1600/1600  9.7 min, 0.0 left
+  [b8] done
+--- level b20 ---
+  [calib b20] proposed      b=  11 -> trig 2.2656 ->   10.8 fires
+  [calib b20] proposed      b=  45 -> trig 0.7188 ->   48.3 fires
+  [calib b20] threshold     b=  11 -> trig 0.0375 ->   10.7 fires
+  [calib b20] threshold     b=  45 -> trig 0.0375 ->   10.7 fires   ** -76% OFF TARGET **
+  [b20] 200/1600  1.1 min, 7.4 left
+  [b20] 400/1600  2.1 min, 6.3 left
+  [b20] 600/1600  3.5 min, 5.8 left
+  [b20] 800/1600  4.8 min, 4.8 left
+  [b20] 1000/1600  5.8 min, 3.5 left
+  [b20] 1200/1600  6.9 min, 2.3 left
+  [b20] 1400/1600  8.0 min, 1.1 left
+  [b20] 1600/1600  9.0 min, 0.0 left
+  [b20] done
+
+e8_burstiness total 63.8 min

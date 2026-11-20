@@ -1,0 +1,157 @@
+34000 runs. speed levels present: 0.25, 0.5, 1
+PROTOCOL section 10 deviations in force: speed 0.5: n=100/cell (protocol 300); speed 1: n=100/cell (protocol 300)
+  seeds per cell: 0.25->300, 0.5->100, 1->100
+
+==============================================================================
+PRIMARY ENDPOINT - alarm-budget frontier, speed 0.25
+==============================================================================
+Claim: proposed @45 alarms/run > threshold's MAXIMUM over its whole
+sweep, CI excluding zero, in BOTH field x BOTH connectivity cells.
+
+threshold's best budget = 11 (on-time 0.386)
+
+cell                       proposed@45  thresh_max     diff            95% CI         p
+predi/sparse                     0.546       0.412   +0.134  [+0.102,+0.167]   2.7e-13 ***
+predi/dense                      0.497       0.403   +0.094  [+0.066,+0.123]   1.4e-09 ***
+unpre/sparse                     0.421       0.361   +0.060  [+0.034,+0.087]   1.9e-05 ***
+unpre/dense                      0.387       0.370   +0.017  [-0.008,+0.041]   2.0e-01    <-- CI includes 0
+
+  VERDICT: NOT SUPPORTED  (3/4 cells)
+  PROTOCOL section 2: a result in fewer than 4 cells is NOT
+  supported; it is reported as partial and the claim is weakened.
+
+  threshold saturation (PROTOCOL section 0):
+    budget:          5       11       22       45       90
+    fires:         3.9     10.5     10.5     10.5     10.5
+    on-time:     0.247    0.386    0.386    0.386    0.386
+
+==============================================================================
+SECONDARY 1 - matched alarm budget, speed 0.25
+(retained because it is UNFAVOURABLE; PROTOCOL section 3)
+==============================================================================
+vs                 diff            95% CI          p    p(Holm)      n
+fixed_dl         -0.025  [-0.037,-0.014]    6.8e-06    1.4e-05 ***   1200
+threshold        -0.080  [-0.092,-0.068]    1.0e-34    4.0e-34 ***   1200
+time_urg         +0.230  [+0.221,+0.240]   6.4e-183   3.8e-182 ***   1200
+always_tx        +0.171  [+0.161,+0.181]   6.4e-138   3.2e-137 ***   1200
+surprise_abl     -0.000  [-0.011,+0.011]    9.1e-01    9.1e-01       1200
+raw_abl          -0.035  [-0.048,-0.023]    1.3e-07    3.8e-07 ***   1200
+
+  PROTOCOL section 6 - surprise_abl is pre-declared underpowered.
+  Required statement: the effect, if any, lies in [-0.011, +0.011] and is smaller than this study resolves.
+  It is NOT reported as 'no effect'.
+
+==============================================================================
+DIAGNOSTIC - is map RMSE independent of on-time? (PROTOCOL section 3)
+==============================================================================
+  across 7 methods: Pearson r=+0.696 p=0.0826, Spearman=+0.857
+  (lower RMSE is better, so r > 0 means better delivery => worse map)
+    threshold      on-time 0.386   map RMSE 0.2622
+    raw_abl        on-time 0.342   map RMSE 0.2233
+    fixed_dl       on-time 0.332   map RMSE 0.2275
+    surprise_abl   on-time 0.307   map RMSE 0.2127
+    proposed       on-time 0.306   map RMSE 0.2185
+    always_tx      on-time 0.135   map RMSE 0.2181
+    time_urg       on-time 0.076   map RMSE 0.2009
+==============================================================================
+PRIMARY ENDPOINT - alarm-budget frontier, speed 0.5
+==============================================================================
+Claim: proposed @45 alarms/run > threshold's MAXIMUM over its whole
+sweep, CI excluding zero, in BOTH field x BOTH connectivity cells.
+
+threshold's best budget = 22 (on-time 0.363)
+
+cell                       proposed@45  thresh_max     diff            95% CI         p
+predi/sparse                     0.455       0.365   +0.090  [+0.042,+0.139]   4.8e-04 ***
+predi/dense                      0.422       0.353   +0.070  [+0.022,+0.118]   6.3e-03 **
+unpre/sparse                     0.398       0.387   +0.011  [-0.035,+0.058]   6.5e-01    <-- CI includes 0
+unpre/dense                      0.425       0.347   +0.078  [+0.035,+0.122]   2.2e-04 ***
+
+  VERDICT: NOT SUPPORTED  (3/4 cells)
+  PROTOCOL section 2: a result in fewer than 4 cells is NOT
+  supported; it is reported as partial and the claim is weakened.
+
+  threshold saturation (PROTOCOL section 0):
+    budget:          5       11       22       45       90
+    fires:         5.4     10.2     11.5     11.5     11.5
+    on-time:     0.245    0.350    0.363    0.363    0.363
+
+==============================================================================
+SECONDARY 1 - matched alarm budget, speed 0.5
+(retained because it is UNFAVOURABLE; PROTOCOL section 3)
+==============================================================================
+vs                 diff            95% CI          p    p(Holm)      n
+fixed_dl         +0.013  [-0.004,+0.031]    1.4e-01    2.8e-01        400
+threshold        -0.086  [-0.107,-0.066]    1.0e-14    4.2e-14 ***    400
+time_urg         +0.191  [+0.175,+0.207]    6.5e-58    3.9e-57 ***    400
+always_tx        +0.170  [+0.153,+0.187]    4.7e-50    2.4e-49 ***    400
+surprise_abl     +0.013  [-0.004,+0.031]    1.5e-01    2.8e-01        400
+raw_abl          -0.060  [-0.080,-0.039]    2.7e-08    8.0e-08 ***    400
+
+  PROTOCOL section 6 - surprise_abl is pre-declared underpowered.
+  Required statement: the effect, if any, lies in [-0.004, +0.031] and is smaller than this study resolves.
+  It is NOT reported as 'no effect'.
+
+==============================================================================
+DIAGNOSTIC - is map RMSE independent of on-time? (PROTOCOL section 3)
+==============================================================================
+  across 7 methods: Pearson r=+0.943 p=0.0014, Spearman=+0.964
+  (lower RMSE is better, so r > 0 means better delivery => worse map)
+    threshold      on-time 0.361   map RMSE 0.2960
+    raw_abl        on-time 0.335   map RMSE 0.2646
+    proposed       on-time 0.275   map RMSE 0.2397
+    fixed_dl       on-time 0.262   map RMSE 0.2410
+    surprise_abl   on-time 0.262   map RMSE 0.2321
+    always_tx      on-time 0.105   map RMSE 0.2066
+    time_urg       on-time 0.084   map RMSE 0.1920
+==============================================================================
+PRIMARY ENDPOINT - alarm-budget frontier, speed 1
+==============================================================================
+Claim: proposed @45 alarms/run > threshold's MAXIMUM over its whole
+sweep, CI excluding zero, in BOTH field x BOTH connectivity cells.
+
+threshold's best budget = 11 (on-time 0.273)
+
+cell                       proposed@45  thresh_max     diff            95% CI         p
+predi/sparse                     0.306       0.266   +0.040  [+0.000,+0.081]   4.0e-02 *
+predi/dense                      0.295       0.251   +0.044  [+0.009,+0.079]   4.2e-03 **
+unpre/sparse                     0.306       0.303   +0.003  [-0.033,+0.039]   7.9e-01    <-- CI includes 0
+unpre/dense                      0.344       0.273   +0.071  [+0.037,+0.104]   1.2e-04 ***
+
+  VERDICT: NOT SUPPORTED  (3/4 cells)
+  PROTOCOL section 2: a result in fewer than 4 cells is NOT
+  supported; it is reported as partial and the claim is weakened.
+
+  threshold saturation (PROTOCOL section 0):
+    budget:          5       11       22       45       90
+    fires:         5.3      9.7     10.2     10.2     10.2
+    on-time:     0.192    0.273    0.271    0.271    0.271
+
+==============================================================================
+SECONDARY 1 - matched alarm budget, speed 1
+(retained because it is UNFAVOURABLE; PROTOCOL section 3)
+==============================================================================
+vs                 diff            95% CI          p    p(Holm)      n
+fixed_dl         +0.006  [-0.009,+0.022]    2.5e-01    2.5e-01        400
+threshold        -0.072  [-0.091,-0.053]    9.6e-13    3.8e-12 ***    400
+time_urg         +0.111  [+0.096,+0.126]    9.9e-33    4.9e-32 ***    400
+always_tx        +0.137  [+0.123,+0.150]    1.2e-50    7.5e-50 ***    400
+surprise_abl     +0.051  [+0.035,+0.066]    1.6e-09    4.8e-09 ***    400
+raw_abl          -0.028  [-0.044,-0.012]    3.2e-04    6.4e-04 ***    400
+
+  PROTOCOL section 6 - surprise_abl is pre-declared underpowered.
+  Required statement: the effect, if any, lies in [+0.035, +0.066] and is smaller than this study resolves.
+  It is NOT reported as 'no effect'.
+
+==============================================================================
+DIAGNOSTIC - is map RMSE independent of on-time? (PROTOCOL section 3)
+==============================================================================
+  across 7 methods: Pearson r=+0.949 p=0.0011, Spearman=+0.929
+  (lower RMSE is better, so r > 0 means better delivery => worse map)
+    threshold      on-time 0.269   map RMSE 0.2496
+    raw_abl        on-time 0.225   map RMSE 0.2347
+    proposed       on-time 0.198   map RMSE 0.2207
+    fixed_dl       on-time 0.191   map RMSE 0.2326
+    surprise_abl   on-time 0.147   map RMSE 0.1965
+    time_urg       on-time 0.087   map RMSE 0.1702
+    always_tx      on-time 0.061   map RMSE 0.1852

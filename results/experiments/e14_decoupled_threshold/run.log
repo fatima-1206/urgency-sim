@@ -1,0 +1,35 @@
+=== e14_decoupled_threshold: Decoupled threshold: does a free firing level remove the ceiling? ===
+    Is the baseline's alarm ceiling a property of triggering, or of tying its firing level to the hazard level?
+    0 runs already complete
+
+--- level base ---
+  [calib base] proposed      b=  11 -> trig 2.0469 ->   10.8 fires
+  [calib base] proposed      b=  90 -> trig 0.3125 ->   88.8 fires
+  [calib base] proposed      b= 150 -> trig 0.0156 ->  149.5 fires
+  [calib base] threshold     b=  11 -> trig 0.0094 ->   10.3 fires
+  [calib base] threshold     b=  90 -> trig 0.0094 ->   10.3 fires   ** -89% OFF TARGET **
+  [calib base] threshold     b= 150 -> trig 0.0094 ->   10.3 fires   ** -93% OFF TARGET **
+  [calib base] threshold_dec b=  11 -> trig 0.3369 ->   10.9 fires
+  [calib base] threshold_dec b=  90 -> trig 0.0908 ->   90.8 fires
+  [calib base] threshold_dec b= 150 -> trig 0.0029 ->  137.2 fires
+  [base] 200/3600  1.8 min, 30.7 left
+  [base] 400/3600  3.6 min, 28.6 left
+  [base] 600/3600  6.1 min, 30.5 left
+  [base] 800/3600  8.6 min, 30.2 left
+  [base] 1000/3600  11.2 min, 29.1 left
+  [base] 1200/3600  13.8 min, 27.5 left
+  [base] 1400/3600  15.4 min, 24.3 left
+  [base] 1600/3600  17.2 min, 21.5 left
+  [base] 1800/3600  18.9 min, 18.9 left
+  [base] 2000/3600  20.6 min, 16.5 left
+  [base] 2200/3600  22.3 min, 14.2 left
+  [base] 2400/3600  24.1 min, 12.0 left
+  [base] 2600/3600  25.8 min, 9.9 left
+  [base] 2800/3600  27.5 min, 7.9 left
+  [base] 3000/3600  29.8 min, 6.0 left
+  [base] 3200/3600  32.2 min, 4.0 left
+  [base] 3400/3600  34.5 min, 2.0 left
+  [base] 3600/3600  36.7 min, 0.0 left
+  [base] done
+
+e14_decoupled_threshold total 101.3 min

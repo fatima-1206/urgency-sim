@@ -1,0 +1,22 @@
+# Feasibility prototype dependencies.
+# Only free, standard scientific-Python packages, as the proposal requires.
+#
+# Versions below are the ones the reported results were produced with
+# (Python 3.12.3). The lower bounds are what the code actually needs.
+#
+#   python3 -m venv --system-site-packages .venv
+#   .venv/bin/pip install -r requirements.txt
+#
+# On Debian/Ubuntu the system Python is "externally managed" (PEP 668), so
+# installing into a venv is required. --system-site-packages lets the venv
+# reuse apt-installed numpy/scipy/matplotlib and only fetch what is missing.
+
+numpy>=1.24,<3        # tested with 1.26.4
+scipy>=1.10           # tested with 1.11.4  (Wilcoxon signed-rank test)
+scikit-learn>=1.3     # tested with 1.9.1   (GaussianProcessRegressor)
+matplotlib>=3.6       # tested with 3.6.3   (plots + FuncAnimation)
+pytest>=8.0           # Phase 1 regression suite: bin/run_tests.sh
+
+# Optional, for .mp4 animations. Not a pip package -- install via your OS:
+#   sudo apt install ffmpeg
+# Without it, scripts/animate.py falls back to .gif via Pillow.

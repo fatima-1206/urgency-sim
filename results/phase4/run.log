@@ -1,0 +1,135 @@
+store results/phase4/runs.jsonl: 0 runs already complete
+
+--- Experiment A, level w0s0 ---
+  [calib A w0s0] proposed   b= 11 -> trig 1.712 ->  11.2 fires
+  [calib A w0s0] proposed   b= 45 -> trig 0.596 ->  46.8 fires
+  [calib A w0s0] threshold  b= 11 -> trig 0.002 ->   8.7 fires  ** -21% off **
+  [calib A w0s0] threshold  b= 45 -> trig 0.002 ->   8.7 fires  ** -81% off **
+  [A w0s0] 100/800  0.5 min, 3.5 left
+  [A w0s0] 200/800  1.0 min, 3.0 left
+  [A w0s0] 300/800  1.6 min, 2.7 left
+  [A w0s0] 400/800  2.3 min, 2.3 left
+  [A w0s0] 500/800  2.7 min, 1.6 left
+  [A w0s0] 600/800  3.2 min, 1.1 left
+  [A w0s0] 700/800  3.8 min, 0.5 left
+  [A w0s0] 800/800  4.2 min, 0.0 left
+--- Experiment A, level w20s0 ---
+  [calib A w20s0] proposed   b= 11 -> trig 1.712 ->  11.0 fires
+  [calib A w20s0] proposed   b= 45 -> trig 0.643 ->  44.8 fires
+  [calib A w20s0] threshold  b= 11 -> trig 0.002 ->   7.2 fires  ** -34% off **
+  [calib A w20s0] threshold  b= 45 -> trig 0.002 ->   7.2 fires  ** -84% off **
+  [A w20s0] 100/800  0.5 min, 3.5 left
+  [A w20s0] 200/800  1.0 min, 3.1 left
+  [A w20s0] 300/800  1.7 min, 2.8 left
+  [A w20s0] 400/800  2.4 min, 2.4 left
+  [A w20s0] 500/800  2.9 min, 1.7 left
+  [A w20s0] 600/800  3.4 min, 1.1 left
+  [A w20s0] 700/800  3.9 min, 0.6 left
+  [A w20s0] 800/800  4.5 min, 0.0 left
+--- Experiment A, level w40s0 ---
+  [calib A w40s0] proposed   b= 11 -> trig 1.909 ->  11.1 fires
+  [calib A w40s0] proposed   b= 45 -> trig 0.701 ->  45.1 fires
+  [calib A w40s0] threshold  b= 11 -> trig 0.019 ->   8.3 fires  ** -24% off **
+  [calib A w40s0] threshold  b= 45 -> trig 0.019 ->   8.3 fires  ** -82% off **
+  [A w40s0] 100/800  0.5 min, 3.8 left
+  [A w40s0] 200/800  1.1 min, 3.2 left
+  [A w40s0] 300/800  1.7 min, 2.8 left
+  [A w40s0] 400/800  2.4 min, 2.4 left
+  [A w40s0] 500/800  2.8 min, 1.7 left
+  [A w40s0] 600/800  3.3 min, 1.1 left
+  [A w40s0] 700/800  3.8 min, 0.5 left
+  [A w40s0] 800/800  4.3 min, 0.0 left
+--- Experiment A, level w60s0 ---
+  [calib A w60s0] proposed   b= 11 -> trig 2.026 ->  10.9 fires
+  [calib A w60s0] proposed   b= 45 -> trig 0.608 ->  43.8 fires
+  [calib A w60s0] threshold  b= 11 -> trig 0.037 ->   8.5 fires  ** -23% off **
+  [calib A w60s0] threshold  b= 45 -> trig 0.037 ->   8.5 fires  ** -81% off **
+  [A w60s0] 100/800  0.5 min, 3.6 left
+  [A w60s0] 200/800  1.0 min, 3.0 left
+  [A w60s0] 300/800  1.7 min, 2.8 left
+  [A w60s0] 400/800  2.4 min, 2.4 left
+  [A w60s0] 500/800  2.9 min, 1.7 left
+  [A w60s0] 600/800  3.4 min, 1.1 left
+  [A w60s0] 700/800  4.0 min, 0.6 left
+  [A w60s0] 800/800  4.5 min, 0.0 left
+--- Experiment A, level w80.2s0 ---
+  [calib A w80.2s0] proposed   b= 11 -> trig 1.909 ->  11.2 fires
+  [calib A w80.2s0] proposed   b= 45 -> trig 0.596 ->  46.3 fires
+  [calib A w80.2s0] threshold  b= 11 -> trig 0.002 ->   7.8 fires  ** -30% off **
+  [calib A w80.2s0] threshold  b= 45 -> trig 0.002 ->   7.8 fires  ** -83% off **
+  [A w80.2s0] 100/800  0.5 min, 3.5 left
+  [A w80.2s0] 200/800  1.0 min, 3.0 left
+  [A w80.2s0] 300/800  1.7 min, 2.8 left
+  [A w80.2s0] 400/800  2.4 min, 2.4 left
+  [A w80.2s0] 500/800  2.9 min, 1.7 left
+  [A w80.2s0] 600/800  3.3 min, 1.1 left
+  [A w80.2s0] 700/800  3.8 min, 0.5 left
+  [A w80.2s0] 800/800  7.5 min, 0.0 left
+--- Experiment A, level w0s0.5 ---
+  [calib A w0s0.5] proposed   b= 11 -> trig 1.723 ->  10.5 fires
+  [calib A w0s0.5] proposed   b= 45 -> trig 0.608 ->  41.4 fires
+  [calib A w0s0.5] threshold  b= 11 -> trig 0.002 ->   8.8 fires  ** -20% off **
+  [calib A w0s0.5] threshold  b= 45 -> trig 0.002 ->   8.8 fires  ** -81% off **
+  [A w0s0.5] 100/800  0.6 min, 4.0 left
+  [A w0s0.5] 200/800  1.2 min, 3.5 left
+  [A w0s0.5] 300/800  1.9 min, 3.1 left
+  [A w0s0.5] 400/800  2.6 min, 2.6 left
+  [A w0s0.5] 500/800  3.0 min, 1.8 left
+  [A w0s0.5] 600/800  3.5 min, 1.2 left
+  [A w0s0.5] 700/800  4.0 min, 0.6 left
+  [A w0s0.5] 800/800  4.5 min, 0.0 left
+--- Experiment A, level w0s1 ---
+  [calib A w0s1] proposed   b= 11 -> trig 1.933 ->  11.1 fires
+  [calib A w0s1] proposed   b= 45 -> trig 0.608 ->  45.9 fires
+  [calib A w0s1] threshold  b= 11 -> trig 0.188 ->  10.6 fires
+  [calib A w0s1] threshold  b= 45 -> trig 0.037 ->  13.5 fires  ** -70% off **
+  [A w0s1] 100/800  0.6 min, 4.1 left
+  [A w0s1] 200/800  1.1 min, 3.4 left
+  [A w0s1] 300/800  1.9 min, 3.2 left
+  [A w0s1] 400/800  2.7 min, 2.7 left
+  [A w0s1] 500/800  3.2 min, 1.9 left
+  [A w0s1] 600/800  3.7 min, 1.2 left
+  [A w0s1] 700/800  4.2 min, 0.6 left
+  [A w0s1] 800/800  4.7 min, 0.0 left
+--- Experiment B, level r0 ---
+  [calib B r0] proposed   b= 11 -> trig 4.327 ->  10.7 fires
+  [calib B r0] proposed   b= 45 -> trig 0.771 ->  44.6 fires
+  [calib B r0] threshold  b= 11 -> trig 1.050 ->  15.6 fires  ** +41% off **
+  [calib B r0] threshold  b= 45 -> trig 0.037 ->  37.2 fires  ** -17% off **
+  [B r0] 100/800  0.7 min, 4.6 left
+  [B r0] 200/800  1.2 min, 3.7 left
+  [B r0] 300/800  1.9 min, 3.2 left
+  [B r0] 400/800  2.5 min, 2.5 left
+  [B r0] 500/800  3.2 min, 1.9 left
+  [B r0] 600/800  3.7 min, 1.2 left
+  [B r0] 700/800  4.4 min, 0.6 left
+  [B r0] 800/800  5.1 min, 0.0 left
+--- Experiment B, level r0.1 ---
+  [calib B r0.1] proposed   b= 11 -> trig 1.630 ->  11.1 fires
+  [calib B r0.1] proposed   b= 45 -> trig 0.573 ->  46.7 fires
+  [calib B r0.1] threshold  b= 11 -> trig 0.075 ->  11.1 fires
+  [calib B r0.1] threshold  b= 45 -> trig 0.005 ->  12.1 fires  ** -73% off **
+  [B r0.1] 100/800  0.6 min, 4.1 left
+  [B r0.1] 200/800  1.1 min, 3.4 left
+  [B r0.1] 300/800  1.8 min, 3.1 left
+  [B r0.1] 400/800  2.6 min, 2.6 left
+  [B r0.1] 500/800  3.1 min, 1.9 left
+  [B r0.1] 600/800  3.8 min, 1.3 left
+  [B r0.1] 700/800  4.3 min, 0.6 left
+  [B r0.1] 800/800  4.8 min, 0.0 left
+--- Experiment B, level r0.25 ---
+  [calib B r0.25] proposed   b= 11 -> trig 1.677 ->  10.9 fires
+  [calib B r0.25] proposed   b= 45 -> trig 0.619 ->  45.0 fires
+  [calib B r0.25] threshold  b= 11 -> trig 0.002 ->   8.9 fires  ** -19% off **
+  [calib B r0.25] threshold  b= 45 -> trig 0.002 ->   8.9 fires  ** -80% off **
+  [B r0.25] 100/800  0.6 min, 4.2 left
+  [B r0.25] 200/800  1.2 min, 3.5 left
+  [B r0.25] 300/800  1.9 min, 3.2 left
+  [B r0.25] 400/800  2.6 min, 2.6 left
+  [B r0.25] 500/800  3.1 min, 1.9 left
+  [B r0.25] 600/800  3.7 min, 1.2 left
+  [B r0.25] 700/800  4.2 min, 0.6 left
+  [B r0.25] 800/800  4.7 min, 0.0 left
+
+total 81.4 min
+EXIT 0

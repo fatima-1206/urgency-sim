@@ -1,0 +1,73 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- virtual environment ---
+.venv/
+venv/
+
+# --- generated media -------------------------------------------------------
+# Animations are large (~8-9 MB each, 69 MB for a full set) and regenerate
+# with:  bin/run_animations.sh --seed 3
+figs/*.mp4
+figs/*.gif
+
+# PNG figures are deliberately NOT ignored: FINDINGS.md and
+# FEASIBILITY_REPORT.md link to them, and they are small (~50-130 KB).
+
+# --- generated results -----------------------------------------------------
+# Console transcripts and calibration traces; regenerate with
+# bin/run_checks.sh and scripts/calibrate.py
+# results/# LaTeX build logs only -- experiment logs under results/ are evidence and
+# MUST stay in version control.
+*.log
+!results/**/*.log
+!results/*.log
+
+# report.json and check6_runs.csv ARE tracked: they are the evidence behind
+# the reports, and regenerating them costs ~85 min.
+
+# --- editor / OS ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+# The working store is ~2 KB/run and too large for git; the gzipped
+# archive beside it (6x smaller) IS committed, and ResultStore reads it
+# transparently, so a fresh clone can reproduce every analysis.
+results/phase3/runs.jsonl
+!results/phase3/runs.jsonl.gz
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+# LaTeX build logs only -- experiment logs under results/ are evidence and
+# MUST stay in version control.
+*.log
+!results/**/*.log
+!results/*.log
+*.out
+*.synctex.gz
+
+
+i232616_i23514_BR_Proposal/*
+!i232616_i23514_BR_Proposal/figures/
+!i232616_i23514_BR_Proposal/main.tex
+!i232616_i23514_BR_Proposal/references.bib
+!i232616_i23514_BR_Proposal/*.tex
+# Experiment programme: the working stores are ~2 KB/run and too large for git;
+# the gzipped archives beside them ARE committed and ResultStore reads them
+# transparently, so a fresh clone reproduces every analysis.
+results/experiments/**/runs.jsonl
+results/phase4/runs.jsonl
+
+# LaTeX build artefacts for the paper (the .pdf is kept)
+final_writeup/*.aux
+final_writeup/*.log
+final_writeup/*.out
+final_writeup/*.blg
+final_writeup/*.bbl

@@ -1,0 +1,36 @@
+
+======================================================================================
+CHECK 5 - ACTION CHOICE, DEADLINE TIGHTNESS, AND REGION USAGE (40 seeds)
+======================================================================================
+  --- selection rule comparison (how often each action is chosen) ---
+  rule        conn      transmit   launch   region  explore  on-time    cov
+  p_deliver   sparse        5.7%    50.1%    34.6%     9.6%    0.445   0.36
+  p_deliver   dense        13.6%    46.8%    28.3%    11.3%    0.445   0.39
+  exp_time    sparse        5.4%    54.2%    31.1%     9.4%    0.450   0.36
+  exp_time    dense        12.1%    49.2%    26.7%    12.0%    0.441   0.39
+
+  --- sparse connectivity ---
+    decisions while pending: 17.6/run
+    regions: 2.84 discovered at decision time (peak 3.98) vs 2.62 real
+    action chosen:  transmit_now   5.4%   goto_launch  54.2%   goto_region  31.1%   explore   9.4%
+    distance when pending:  launch   7.5 cells,  other regions  15.4 cells
+    estimated p(success):   launch 0.768,       other regions 0.768
+    mean P(deliver) scored per action: transmit_now 0.352  goto_launch 0.889  goto_region 0.698  explore 0.270
+    mean E[time to upload]:  transmit_now   24.6  goto_launch    6.5  goto_region   13.8  explore   26.9
+    deadline horizon 18.2 ticks; tightness (horizon/travel): launch 3.8, region 2.8
+    fraction where the deadline expires before the agent could arrive: launch 10%, region 16%
+
+  --- dense connectivity ---
+    decisions while pending: 19.7/run
+    regions: 2.36 discovered at decision time (peak 4.47) vs 4.00 real
+    action chosen:  transmit_now  12.1%   goto_launch  49.2%   goto_region  26.7%   explore  12.0%
+    distance when pending:  launch   7.8 cells,  other regions  14.9 cells
+    estimated p(success):   launch 0.744,       other regions 0.780
+    mean P(deliver) scored per action: transmit_now 0.544  goto_launch 0.851  goto_region 0.741  explore 0.312
+    mean E[time to upload]:  transmit_now   17.3  goto_launch    6.6  goto_region   12.1  explore   24.3
+    deadline horizon 17.7 ticks; tightness (horizon/travel): launch 3.8, region 2.4
+    fraction where the deadline expires before the agent could arrive: launch 15%, region 22%
+
+
+total 2.8 min
+wrote results/report.json (10 checks: check1, check2, check3_4, check5, check5_rules, check6, check7, check8, check9, check_conn)

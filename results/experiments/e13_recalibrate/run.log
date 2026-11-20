@@ -1,0 +1,53 @@
+=== e13_recalibrate: Matched cells recalibrated at 20 seeds ===
+    Is the equal-airtime result an artefact of 8-seed calibration?
+    0 runs already complete
+
+--- level h0.25 ---
+=== e13_recalibrate: Matched cells recalibrated at 20 seeds ===
+    Is the equal-airtime result an artefact of 8-seed calibration?
+    0 runs already complete
+
+--- level h0.25 ---
+  [calib h0.25] proposed      b=   5 -> trig 3.5312 ->    5.0 fires
+  [calib h0.25] proposed      b=  11 -> trig 2.2031 ->   10.9 fires
+  [calib h0.25] threshold     b=   5 -> trig 0.9773 ->    5.0 fires
+  [calib h0.25] threshold     b=  11 -> trig 0.3211 ->   10.9 fires
+  [h0.25] 200/1600  1.4 min, 10.0 left
+  [h0.25] 400/1600  2.8 min, 8.5 left
+  [h0.25] 600/1600  4.4 min, 7.4 left
+  [h0.25] 800/1600  5.9 min, 5.9 left
+  [h0.25] 1000/1600  7.2 min, 4.3 left
+  [h0.25] 1200/1600  8.5 min, 2.8 left
+  [h0.25] 1400/1600  9.9 min, 1.4 left
+  [h0.25] 1600/1600  11.4 min, 0.0 left
+  [h0.25] done
+--- level h0.35 ---
+  [calib h0.35] proposed      b=   5 -> trig 3.1562 ->    4.8 fires
+  [calib h0.35] proposed      b=  11 -> trig 2.0625 ->   10.8 fires
+  [calib h0.35] threshold     b=   5 -> trig 0.5789 ->    5.0 fires
+  [calib h0.35] threshold     b=  11 -> trig 0.0422 ->   11.1 fires
+  [h0.35] 200/1600  1.5 min, 10.5 left
+  [h0.35] 400/1600  2.9 min, 8.7 left
+  [h0.35] 600/1600  4.4 min, 7.4 left
+  [h0.35] 800/1600  6.0 min, 6.0 left
+  [h0.35] 1000/1600  7.4 min, 4.4 left
+  [h0.35] 1200/1600  8.8 min, 2.9 left
+  [h0.35] 1400/1600  10.3 min, 1.5 left
+  [h0.35] 1600/1600  11.8 min, 0.0 left
+  [h0.35] done
+--- level h0.5 ---
+  [calib h0.5] proposed      b=   5 -> trig 2.8125 ->    4.9 fires
+  [calib h0.5] proposed      b=  11 -> trig 2.0000 ->   10.8 fires
+  [calib h0.5] threshold     b=   5 -> trig 0.0047 ->    4.9 fires
+  [calib h0.5] threshold     b=  11 -> trig 0.0047 ->    4.9 fires   ** -55% OFF TARGET **
+  [h0.5] 200/1600  1.6 min, 10.9 left
+  [h0.5] 400/1600  3.2 min, 9.6 left
+  [h0.5] 600/1600  5.0 min, 8.3 left
+  [h0.5] 800/1600  6.8 min, 6.8 left
+  [h0.5] 1000/1600  8.3 min, 5.0 left
+  [h0.5] 1200/1600  10.0 min, 3.3 left
+  [h0.5] 1400/1600  11.5 min, 1.6 left
+  [h0.5] 1600/1600  13.0 min, 0.0 left
+  [h0.5] done
+
+e13_recalibrate total 102.1 min

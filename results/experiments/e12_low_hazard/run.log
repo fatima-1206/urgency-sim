@@ -1,0 +1,86 @@
+=== e12_low_hazard: Low hazard: a matched comparison at a high alarm rate ===
+    Does the baseline still win at equal airtime when equal airtime is possible at 22 and 45 alarms/run?
+    0 runs already complete
+
+--- level h0.1 ---
+  [calib h0.1] proposed      b=  11 -> trig 2.9219 ->   10.8 fires
+  [calib h0.1] proposed      b=  22 -> trig 1.9219 ->   21.6 fires
+  [calib h0.1] proposed      b=  45 -> trig 1.1250 ->   44.8 fires
+  [calib h0.1] threshold     b=  11 -> trig 0.9211 ->   10.9 fires
+  [calib h0.1] threshold     b=  22 -> trig 0.6375 ->   22.0 fires
+  [calib h0.1] threshold     b=  45 -> trig 0.3023 ->   45.0 fires
+  [h0.1] 200/2400  1.6 min, 18.0 left
+  [h0.1] 400/2400  3.2 min, 16.0 left
+  [h0.1] 600/2400  4.9 min, 14.8 left
+  [h0.1] 800/2400  6.7 min, 13.3 left
+  [h0.1] 1000/2400  8.6 min, 12.1 left
+  [h0.1] 1200/2400  10.7 min, 10.7 left
+  [h0.1] 1400/2400  12.1 min, 8.7 left
+  [h0.1] 1600/2400  13.7 min, 6.9 left
+  [h0.1] 1800/2400  15.4 min, 5.1 left
+  [h0.1] 2000/2400  21.3 min, 4.3 left
+  [h0.1] 2200/2400  23.2 min, 2.1 left
+  [h0.1] 2400/2400  25.4 min, 0.0 left
+  [h0.1] done
+--- level h0.15 ---
+  [calib h0.15] proposed      b=  11 -> trig 2.5000 ->   11.0 fires
+  [calib h0.15] proposed      b=  22 -> trig 1.6875 ->   21.9 fires
+  [calib h0.15] proposed      b=  45 -> trig 0.9688 ->   44.9 fires
+  [calib h0.15] threshold     b=  11 -> trig 0.7195 ->   11.0 fires
+  [calib h0.15] threshold     b=  22 -> trig 0.4031 ->   22.1 fires
+  [calib h0.15] threshold     b=  45 -> trig 0.0984 ->   45.4 fires
+  [h0.15] 200/2400  1.6 min, 17.4 left
+  [h0.15] 400/2400  3.2 min, 16.0 left
+  [h0.15] 600/2400  5.0 min, 14.9 left
+  [h0.15] 800/2400  6.8 min, 13.5 left
+  [h0.15] 1000/2400  8.9 min, 12.4 left
+  [h0.15] 1200/2400  11.1 min, 11.1 left
+  [h0.15] 1400/2400  12.7 min, 9.1 left
+  [h0.15] 1600/2400  14.4 min, 7.2 left
+  [h0.15] 1800/2400  16.2 min, 5.4 left
+  [h0.15] 2000/2400  18.1 min, 3.6 left
+  [h0.15] 2200/2400  20.0 min, 1.8 left
+  [h0.15] 2400/2400  21.9 min, 0.0 left
+  [h0.15] done
+--- level h0.2 ---
+  [calib h0.2] proposed      b=  11 -> trig 2.3906 ->   10.9 fires
+  [calib h0.2] proposed      b=  22 -> trig 1.5625 ->   22.2 fires
+  [calib h0.2] proposed      b=  45 -> trig 0.8281 ->   44.9 fires
+  [calib h0.2] threshold     b=  11 -> trig 0.5203 ->   10.8 fires
+  [calib h0.2] threshold     b=  22 -> trig 0.2016 ->   22.1 fires
+  [calib h0.2] threshold     b=  45 -> trig 0.0047 ->   36.9 fires   ** -18% OFF TARGET **
+  [h0.2] 200/2400  1.7 min, 19.0 left
+  [h0.2] 400/2400  3.4 min, 17.2 left
+  [h0.2] 600/2400  5.2 min, 15.6 left
+  [h0.2] 800/2400  7.2 min, 14.4 left
+  [h0.2] 1000/2400  9.4 min, 13.2 left
+  [h0.2] 1200/2400  11.7 min, 11.7 left
+  [h0.2] 1400/2400  13.5 min, 9.6 left
+  [h0.2] 1600/2400  15.4 min, 7.7 left
+  [h0.2] 1800/2400  17.3 min, 5.8 left
+  [h0.2] 2000/2400  19.1 min, 3.8 left
+  [h0.2] 2200/2400  21.1 min, 1.9 left
+  [h0.2] 2400/2400  23.4 min, 0.0 left
+  [h0.2] done
+--- level h0.25 ---
+  [calib h0.25] proposed      b=  11 -> trig 2.2031 ->   10.9 fires
+  [calib h0.25] proposed      b=  22 -> trig 1.4219 ->   22.1 fires
+  [calib h0.25] proposed      b=  45 -> trig 0.7812 ->   45.1 fires
+  [calib h0.25] threshold     b=  11 -> trig 0.3211 ->   10.9 fires
+  [calib h0.25] threshold     b=  22 -> trig 0.0375 ->   22.0 fires
+  [calib h0.25] threshold     b=  45 -> trig 0.0047 ->   22.1 fires   ** -51% OFF TARGET **
+  [h0.25] 200/2400  2.0 min, 22.0 left
+  [h0.25] 400/2400  4.1 min, 20.4 left
+  [h0.25] 600/2400  6.1 min, 18.2 left
+  [h0.25] 800/2400  8.4 min, 16.7 left
+  [h0.25] 1000/2400  10.7 min, 14.9 left
+  [h0.25] 1200/2400  13.2 min, 13.2 left
+  [h0.25] 1400/2400  15.1 min, 10.8 left
+  [h0.25] 1600/2400  17.1 min, 8.5 left
+  [h0.25] 1800/2400  19.1 min, 6.4 left
+  [h0.25] 2000/2400  21.2 min, 4.2 left
+  [h0.25] 2200/2400  23.5 min, 2.1 left
+  [h0.25] 2400/2400  25.7 min, 0.0 left
+  [h0.25] done
+
+e12_low_hazard total 255.7 min

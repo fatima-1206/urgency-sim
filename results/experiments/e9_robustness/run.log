@@ -1,0 +1,118 @@
+=== e9_robustness: Robustness battery at study scale ===
+    Does any Phase 3 conclusion depend on one parameter setting?
+    0 runs already complete
+
+--- level k1 ---
+  [calib k1] proposed      b=  45 -> trig 1.7500 ->   45.2 fires
+  [calib k1] threshold     b=  45 -> trig 0.0375 ->   43.5 fires
+  [k1] 200/800  1.2 min, 3.6 left
+  [k1] 400/800  2.4 min, 2.4 left
+  [k1] 600/800  3.5 min, 1.2 left
+  [k1] 800/800  4.6 min, 0.0 left
+  [k1] done
+--- level k2 ---
+  [calib k2] proposed      b=  45 -> trig 1.0781 ->   45.3 fires
+  [calib k2] threshold     b=  45 -> trig 0.0047 ->   18.5 fires   ** -59% OFF TARGET **
+  [k2] 200/800  1.2 min, 3.7 left
+  [k2] 400/800  2.5 min, 2.5 left
+  [k2] 600/800  3.5 min, 1.2 left
+  [k2] 800/800  4.5 min, 0.0 left
+  [k2] done
+--- level k3 ---
+  [calib k3] proposed      b=  45 -> trig 0.6250 ->   45.8 fires
+  [calib k3] threshold     b=  45 -> trig 0.0375 ->    9.8 fires   ** -78% OFF TARGET **
+  [k3] 200/800  1.3 min, 3.8 left
+  [k3] 400/800  2.6 min, 2.6 left
+  [k3] 600/800  3.5 min, 1.2 left
+  [k3] 800/800  4.4 min, 0.0 left
+  [k3] done
+--- level k5 ---
+  [calib k5] proposed      b=  45 -> trig 0.2812 ->   45.8 fires
+  [calib k5] threshold     b=  45 -> trig 0.0094 ->    5.5 fires   ** -88% OFF TARGET **
+  [k5] 200/800  1.3 min, 3.8 left
+  [k5] 400/800  2.6 min, 2.6 left
+  [k5] 600/800  3.4 min, 1.1 left
+  [k5] 800/800  4.3 min, 0.0 left
+  [k5] done
+--- level noise0.02 ---
+  [calib noise0.02] proposed      b=  45 -> trig 0.8125 ->   44.8 fires
+  [calib noise0.02] threshold     b=  45 -> trig 0.0047 ->   11.8 fires   ** -74% OFF TARGET **
+  [noise0.02] 200/800  1.2 min, 3.7 left
+  [noise0.02] 400/800  2.5 min, 2.5 left
+  [noise0.02] 600/800  3.4 min, 1.1 left
+  [noise0.02] 800/800  4.4 min, 0.0 left
+  [noise0.02] done
+--- level noise0.04 ---
+  [calib noise0.04] proposed      b=  45 -> trig 0.6250 ->   45.8 fires
+  [calib noise0.04] threshold     b=  45 -> trig 0.0375 ->    9.8 fires   ** -78% OFF TARGET **
+  [noise0.04] 200/800  1.3 min, 3.8 left
+  [noise0.04] 400/800  2.6 min, 2.6 left
+  [noise0.04] 600/800  3.5 min, 1.2 left
+  [noise0.04] 800/800  4.4 min, 0.0 left
+  [noise0.04] done
+--- level noise0.08 ---
+  [calib noise0.08] proposed      b=  45 -> trig 0.5781 ->   44.8 fires
+  [calib noise0.08] threshold     b=  45 -> trig 0.0023 ->    9.2 fires   ** -80% OFF TARGET **
+  [noise0.08] 200/800  1.3 min, 3.9 left
+  [noise0.08] 400/800  2.6 min, 2.6 left
+  [noise0.08] 600/800  3.6 min, 1.2 left
+  [noise0.08] 800/800  4.5 min, 0.0 left
+  [noise0.08] done
+--- level consec1 ---
+  [calib consec1] proposed      b=  45 -> trig 0.5938 ->   44.4 fires
+  [calib consec1] threshold     b=  45 -> trig 0.0375 ->   12.6 fires   ** -72% OFF TARGET **
+  [consec1] 200/800  1.2 min, 3.5 left
+  [consec1] 400/800  2.4 min, 2.4 left
+  [consec1] 600/800  3.3 min, 1.1 left
+  [consec1] 800/800  4.2 min, 0.0 left
+  [consec1] done
+--- level consec2 ---
+  [calib consec2] proposed      b=  45 -> trig 0.6875 ->   44.9 fires
+  [calib consec2] threshold     b=  45 -> trig 0.0375 ->   12.1 fires   ** -73% OFF TARGET **
+  [consec2] 200/800  1.2 min, 3.7 left
+  [consec2] 400/800  2.5 min, 2.5 left
+  [consec2] 600/800  3.4 min, 1.1 left
+  [consec2] 800/800  4.4 min, 0.0 left
+  [consec2] done
+--- level consec3 ---
+  [calib consec3] proposed      b=  45 -> trig 0.6250 ->   45.8 fires
+  [calib consec3] threshold     b=  45 -> trig 0.0375 ->    9.8 fires   ** -78% OFF TARGET **
+  [consec3] 200/800  1.3 min, 3.8 left
+  [consec3] 400/800  2.6 min, 2.6 left
+  [consec3] 600/800  3.5 min, 1.2 left
+  [consec3] 800/800  4.4 min, 0.0 left
+  [consec3] done
+--- level consec5 ---
+  [calib consec5] proposed      b=  45 -> trig 0.7500 ->   45.0 fires
+  [calib consec5] threshold     b=  45 -> trig 0.0094 ->    8.5 fires   ** -81% OFF TARGET **
+  [consec5] 200/800  1.2 min, 3.7 left
+  [consec5] 400/800  2.5 min, 2.5 left
+  [consec5] 600/800  3.4 min, 1.1 left
+  [consec5] 800/800  4.3 min, 0.0 left
+  [consec5] done
+--- level window70 ---
+  [calib window70] proposed      b=  45 -> trig 0.7500 ->   45.0 fires
+  [calib window70] threshold     b=  45 -> trig 0.0023 ->   11.2 fires   ** -75% OFF TARGET **
+  [window70] 200/800  0.8 min, 2.5 left
+  [window70] 400/800  1.7 min, 1.7 left
+  [window70] 600/800  2.3 min, 0.8 left
+  [window70] 800/800  2.9 min, 0.0 left
+  [window70] done
+--- level window140 ---
+  [calib window140] proposed      b=  45 -> trig 0.6250 ->   45.8 fires
+  [calib window140] threshold     b=  45 -> trig 0.0375 ->    9.8 fires   ** -78% OFF TARGET **
+  [window140] 200/800  1.3 min, 3.9 left
+  [window140] 400/800  2.6 min, 2.6 left
+  [window140] 600/800  3.5 min, 1.2 left
+  [window140] 800/800  4.4 min, 0.0 left
+  [window140] done
+--- level window280 ---
+  [calib window280] proposed      b=  45 -> trig 0.7344 ->   45.7 fires
+  [calib window280] threshold     b=  45 -> trig 0.0094 ->   10.5 fires   ** -77% OFF TARGET **
+  [window280] 200/800  2.5 min, 7.5 left
+  [window280] 400/800  5.0 min, 5.0 left
+  [window280] 600/800  7.1 min, 2.4 left
+  [window280] 800/800  9.1 min, 0.0 left
+  [window280] done
+
+e9_robustness total 109.6 min

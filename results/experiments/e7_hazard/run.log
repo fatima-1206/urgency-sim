@@ -1,0 +1,48 @@
+=== e7_hazard: Hazard level ===
+    Is any Phase 3 conclusion an artefact of hazard = 0.35?
+    0 runs already complete
+
+--- level h0.25 ---
+  [calib h0.25] proposed      b=  11 -> trig 2.2500 ->   10.9 fires
+  [calib h0.25] proposed      b=  45 -> trig 0.7344 ->   45.2 fires
+  [calib h0.25] threshold     b=  11 -> trig 0.3563 ->   11.0 fires
+  [calib h0.25] threshold     b=  45 -> trig 0.0375 ->   23.4 fires   ** -48% OFF TARGET **
+  [h0.25] 200/1600  1.1 min, 7.7 left
+  [h0.25] 400/1600  2.2 min, 6.6 left
+  [h0.25] 600/1600  3.6 min, 6.0 left
+  [h0.25] 800/1600  5.0 min, 5.0 left
+  [h0.25] 1000/1600  6.1 min, 3.6 left
+  [h0.25] 1200/1600  7.2 min, 2.4 left
+  [h0.25] 1400/1600  8.3 min, 1.2 left
+  [h0.25] 1600/1600  9.5 min, 0.0 left
+  [h0.25] done
+--- level h0.35 ---
+  [calib h0.35] proposed      b=  11 -> trig 1.9688 ->   10.4 fires
+  [calib h0.35] proposed      b=  45 -> trig 0.6250 ->   45.8 fires
+  [calib h0.35] threshold     b=  11 -> trig 0.0375 ->    9.8 fires   ** -11% OFF TARGET **
+  [calib h0.35] threshold     b=  45 -> trig 0.0375 ->    9.8 fires   ** -78% OFF TARGET **
+  [h0.35] 200/1600  1.1 min, 7.7 left
+  [h0.35] 400/1600  2.2 min, 6.7 left
+  [h0.35] 600/1600  3.6 min, 6.0 left
+  [h0.35] 800/1600  5.0 min, 5.0 left
+  [h0.35] 1000/1600  6.1 min, 3.6 left
+  [h0.35] 1200/1600  7.1 min, 2.4 left
+  [h0.35] 1400/1600  8.2 min, 1.2 left
+  [h0.35] 1600/1600  9.3 min, 0.0 left
+  [h0.35] done
+--- level h0.5 ---
+  [calib h0.5] proposed      b=  11 -> trig 2.0156 ->   11.1 fires
+  [calib h0.5] proposed      b=  45 -> trig 0.5938 ->   43.8 fires
+  [calib h0.5] threshold     b=  11 -> trig 0.0094 ->    5.3 fires   ** -51% OFF TARGET **
+  [calib h0.5] threshold     b=  45 -> trig 0.0094 ->    5.3 fires   ** -88% OFF TARGET **
+  [h0.5] 200/1600  1.1 min, 7.6 left
+  [h0.5] 400/1600  2.2 min, 6.5 left
+  [h0.5] 600/1600  3.5 min, 5.9 left
+  [h0.5] 800/1600  5.0 min, 5.0 left
+  [h0.5] 1000/1600  6.0 min, 3.6 left
+  [h0.5] 1200/1600  7.0 min, 2.3 left
+  [h0.5] 1400/1600  7.9 min, 1.1 left
+  [h0.5] 1600/1600  8.9 min, 0.0 left
+  [h0.5] done
+
+e7_hazard total 46.7 min

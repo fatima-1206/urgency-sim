@@ -1,0 +1,48 @@
+=== e5_agent_speed: Agent speed ===
+    Does a faster agent help the method or the baseline more?
+    0 runs already complete
+
+--- level v1 ---
+  [calib v1] proposed      b=  11 -> trig 1.9688 ->   10.4 fires
+  [calib v1] proposed      b=  45 -> trig 0.6250 ->   45.8 fires
+  [calib v1] threshold     b=  11 -> trig 0.0375 ->    9.8 fires   ** -11% OFF TARGET **
+  [calib v1] threshold     b=  45 -> trig 0.0375 ->    9.8 fires   ** -78% OFF TARGET **
+  [v1] 200/1600  1.1 min, 7.8 left
+  [v1] 400/1600  2.3 min, 6.8 left
+  [v1] 600/1600  3.7 min, 6.1 left
+  [v1] 800/1600  5.0 min, 5.0 left
+  [v1] 1000/1600  6.0 min, 3.6 left
+  [v1] 1200/1600  7.0 min, 2.3 left
+  [v1] 1400/1600  7.9 min, 1.1 left
+  [v1] 1600/1600  8.8 min, 0.0 left
+  [v1] done
+--- level v2 ---
+  [calib v2] proposed      b=  11 -> trig 2.0156 ->   11.0 fires
+  [calib v2] proposed      b=  45 -> trig 0.6094 ->   44.5 fires
+  [calib v2] threshold     b=  11 -> trig 0.0023 ->    9.1 fires   ** -17% OFF TARGET **
+  [calib v2] threshold     b=  45 -> trig 0.0023 ->    9.1 fires   ** -80% OFF TARGET **
+  [v2] 200/1600  1.0 min, 6.9 left
+  [v2] 400/1600  2.0 min, 5.9 left
+  [v2] 600/1600  3.2 min, 5.4 left
+  [v2] 800/1600  4.5 min, 4.5 left
+  [v2] 1000/1600  5.5 min, 3.3 left
+  [v2] 1200/1600  6.5 min, 2.2 left
+  [v2] 1400/1600  7.5 min, 1.1 left
+  [v2] 1600/1600  8.4 min, 0.0 left
+  [v2] done
+--- level v3 ---
+  [calib v3] proposed      b=  11 -> trig 1.5000 ->   11.2 fires
+  [calib v3] proposed      b=  45 -> trig 0.4531 ->   43.6 fires
+  [calib v3] threshold     b=  11 -> trig 0.0187 ->    6.1 fires   ** -45% OFF TARGET **
+  [calib v3] threshold     b=  45 -> trig 0.0187 ->    6.1 fires   ** -87% OFF TARGET **
+  [v3] 200/1600  1.0 min, 7.3 left
+  [v3] 400/1600  2.0 min, 6.1 left
+  [v3] 600/1600  3.2 min, 5.4 left
+  [v3] 800/1600  4.5 min, 4.5 left
+  [v3] 1000/1600  5.5 min, 3.3 left
+  [v3] 1200/1600  6.5 min, 2.2 left
+  [v3] 1400/1600  7.5 min, 1.1 left
+  [v3] 1600/1600  8.5 min, 0.0 left
+  [v3] done
+
+e5_agent_speed total 43.8 min

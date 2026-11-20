@@ -1,0 +1,78 @@
+=== e10_replication: Seed-stability replication on a fresh block ===
+    Does the Phase 3 frontier reproduce on seeds never used before?
+    0 runs already complete
+
+--- level base ---
+  [calib base] proposed      b=   5 -> trig 3.3438 ->    4.8 fires
+  [calib base] proposed      b=  11 -> trig 2.0938 ->   11.1 fires
+  [calib base] proposed      b=  22 -> trig 1.0938 ->   21.9 fires
+  [calib base] proposed      b=  45 -> trig 0.5781 ->   45.3 fires
+  [calib base] proposed      b=  90 -> trig 0.2969 ->   91.8 fires
+  [calib base] threshold     b=   5 -> trig 0.5250 ->    5.0 fires
+  [calib base] threshold     b=  11 -> trig 0.0094 ->   10.6 fires
+  [calib base] threshold     b=  22 -> trig 0.0094 ->   10.6 fires   ** -52% OFF TARGET **
+  [calib base] threshold     b=  45 -> trig 0.0094 ->   10.6 fires   ** -77% OFF TARGET **
+  [calib base] threshold     b=  90 -> trig 0.0094 ->   10.6 fires   ** -88% OFF TARGET **
+  [base] 200/12000  0.9 min, 50.8 left
+  [base] 400/12000  1.7 min, 50.0 left
+  [base] 600/12000  2.6 min, 49.8 left
+  [base] 800/12000  3.5 min, 48.7 left
+  [base] 1000/12000  4.4 min, 48.0 left
+  [base] 1200/12000  5.3 min, 47.4 left
+  [base] 1400/12000  6.2 min, 47.0 left
+  [base] 1600/12000  7.2 min, 46.5 left
+  [base] 1800/12000  8.1 min, 46.0 left
+  [base] 2000/12000  9.1 min, 45.4 left
+  [base] 2200/12000  10.1 min, 44.8 left
+  [base] 2400/12000  11.0 min, 44.2 left
+  [base] 2600/12000  12.2 min, 43.9 left
+  [base] 2800/12000  13.3 min, 43.6 left
+  [base] 3000/12000  14.4 min, 43.1 left
+  [base] 3200/12000  15.6 min, 43.0 left
+  [base] 3400/12000  16.8 min, 42.6 left
+  [base] 3600/12000  18.0 min, 42.0 left
+  [base] 3800/12000  19.3 min, 41.6 left
+  [base] 4000/12000  20.6 min, 41.1 left
+  [base] 4200/12000  21.8 min, 40.6 left
+  [base] 4400/12000  23.1 min, 40.0 left
+  [base] 4600/12000  24.5 min, 39.4 left
+  [base] 4800/12000  25.8 min, 38.7 left
+  [base] 5000/12000  27.2 min, 38.0 left
+  [base] 5200/12000  28.5 min, 37.3 left
+  [base] 5400/12000  29.9 min, 36.6 left
+  [base] 5600/12000  31.3 min, 35.8 left
+  [base] 5800/12000  32.7 min, 35.0 left
+  [base] 6000/12000  34.1 min, 34.1 left
+  [base] 6200/12000  35.0 min, 32.7 left
+  [base] 6400/12000  35.9 min, 31.4 left
+  [base] 6600/12000  36.8 min, 30.1 left
+  [base] 6800/12000  37.6 min, 28.8 left
+  [base] 7000/12000  38.5 min, 27.5 left
+  [base] 7200/12000  39.5 min, 26.3 left
+  [base] 7400/12000  40.4 min, 25.1 left
+  [base] 7600/12000  41.3 min, 23.9 left
+  [base] 7800/12000  42.3 min, 22.8 left
+  [base] 8000/12000  43.2 min, 21.6 left
+  [base] 8200/12000  44.2 min, 20.5 left
+  [base] 8400/12000  45.2 min, 19.4 left
+  [base] 8600/12000  46.1 min, 18.2 left
+  [base] 8800/12000  47.1 min, 17.1 left
+  [base] 9000/12000  48.0 min, 16.0 left
+  [base] 9200/12000  49.0 min, 14.9 left
+  [base] 9400/12000  49.9 min, 13.8 left
+  [base] 9600/12000  50.9 min, 12.7 left
+  [base] 9800/12000  51.9 min, 11.6 left
+  [base] 10000/12000  52.8 min, 10.6 left
+  [base] 10200/12000  53.7 min, 9.5 left
+  [base] 10400/12000  54.7 min, 8.4 left
+  [base] 10600/12000  55.7 min, 7.4 left
+  [base] 10800/12000  56.7 min, 6.3 left
+  [base] 11000/12000  57.6 min, 5.2 left
+  [base] 11200/12000  58.5 min, 4.2 left
+  [base] 11400/12000  59.5 min, 3.1 left
+  [base] 11600/12000  60.4 min, 2.1 left
+  [base] 11800/12000  61.4 min, 1.0 left
+  [base] 12000/12000  62.4 min, 0.0 left
+  [base] done
+
+e10_replication total 76.7 min

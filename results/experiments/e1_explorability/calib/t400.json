@@ -1,0 +1,23 @@
+{
+ "git_sha": "ea4d645+dirty",
+ "cfg_hash": "7401ff0fb5",
+ "lib": "py3.12.3 np1.26.4 sp1.11.4 sk1.9.1",
+ "calib_n": 8,
+ "level": "t400",
+ "trig": {
+  "proposed|11": 1.1875,
+  "proposed|45": 0.34375,
+  "threshold|11": 0.15,
+  "threshold|45": 0.15
+ },
+ "got": {
+  "proposed|11": 10.875,
+  "proposed|45": 46.625,
+  "threshold|11": 4.96875,
+  "threshold|45": 4.96875
+ },
+ "off_budget": [
+  "threshold|11",
+  "threshold|45"
+ ]
+}
